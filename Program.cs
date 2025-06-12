@@ -11,12 +11,12 @@ namespace ChipSecuritySystem
         static void Main(string[] args)
         {
             List<ColorChip> colorList = new List<ColorChip>();
+            colorList.Add(new ColorChip(Color.Blue, Color.Red));
             colorList.Add(new ColorChip(Color.Blue, Color.Yellow));
             colorList.Add(new ColorChip(Color.Red, Color.Green));
             colorList.Add(new ColorChip(Color.Orange, Color.Purple));
             colorList.Add(new ColorChip(Color.Yellow, Color.Yellow));
             colorList.Add(new ColorChip(Color.Yellow, Color.Blue));
-            colorList.Add(new ColorChip(Color.Blue, Color.Red));
             colorList.Add(new ColorChip(Color.Yellow, Color.Red));
 
             List<ColorChip> finalList = new List<ColorChip>();
@@ -26,7 +26,8 @@ namespace ChipSecuritySystem
                 if (colorList[i].StartColor == Color.Blue)
                 {
                     List<ColorChip> auxList = new List<ColorChip>();
-                    auxList = colorList;
+                    auxList.Clear();
+                    auxList.AddRange(colorList);
 
                     var item = colorList[i];
                     auxList.RemoveAt(i);
