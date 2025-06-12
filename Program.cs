@@ -62,7 +62,10 @@ namespace ChipSecuritySystem
                         //pick the longest list
                         auxList.RemoveRange(greenPosition + 1, auxList.Count - (greenPosition + 1));
                         if (finalList.Count < auxList.Count)
+                        {
+                            finalList.Clear();
                             finalList.AddRange(auxList);
+                        }
                     }
 
                 }
