@@ -56,17 +56,22 @@ namespace ChipSecuritySystem
                         }
                     }
 
+
                     //if no green position is found then leave the list empty 
                     if (greenPosition != 0)
                     {
                         //pick the longest list
                         auxList.RemoveRange(greenPosition + 1, auxList.Count - (greenPosition + 1));
                         if (finalList.Count < auxList.Count)
+                        {
+                            finalList.Clear();
                             finalList.AddRange(auxList);
+                        }
                     }
 
                 }
             }
+
 
             if (finalList.Count != 0)
             {
